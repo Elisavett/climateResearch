@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Scripts.Render("~/bundles/jquery")
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=00edbb4c-85c6-4375-8249-f0baae6a12c2" type="text/javascript"></script>
+
+<span for="json"></span>
+<input type="text" value="@{json}" id="json" hidden="true">
+<input type="text" value="@{groupNum}" id="groupNum" hidden="true">
+
+
+<span class="yandex">
+
+    <div id="map"></div>
+</span>
+<div class="dropdown">
+    <button class="dropbtn">Тип датчика</button>
+    <div class="dropdown-content">
+        <a th:each="physicalQuantity : ${physicalQuantities}" th:text="${physicalQuantity.getName()}" th:href="@{/(pqId=${physicalQuantity.getId()})}"></a>
+    </div>
+</div>
