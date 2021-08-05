@@ -18,10 +18,10 @@ window.onload = function () {
 
         for (let i = 0; i < observationPoints.length; i++) {
             if(observationPoints[i] !== undefined) {
-                if (Number(observationPoints[i].latitude) > max_lat) max_lat = Number(observationPoints[i].latitude);
-                if (Number(observationPoints[i].latitude) < min_lat) min_lat = Number(observationPoints[i].latitude);
-                if (Number(observationPoints[i].longitude) > max_long) max_long = Number(observationPoints[i].longitude);
-                if (Number(observationPoints[i].longitude) < min_long) min_long = Number(observationPoints[i].longitude);
+                if (observationPoints[i].Latitude > max_lat) max_lat = observationPoints[i].Latitude;
+                if (observationPoints[i].Latitude < min_lat) min_lat = observationPoints[i].Latitude;
+                if (observationPoints[i].Longtitude > max_long) max_long = observationPoints[i].Longtitude;
+                if (observationPoints[i].Longtitude < min_long) min_long = observationPoints[i].Longtitude;
 
             }
         }
@@ -46,17 +46,17 @@ window.onload = function () {
             if (observationPoints[i] !== undefined) {
                 let authAdditionalParams = isAuth ? "<a target='_blank' href='/admin/editCoordinates/" + observationPoints[i].id + "'>Редактировать координаты</a>" : "";
                 var myCircle = new ymaps.Placemark(
-                    [observationPoints[i].latitude, observationPoints[i].longitude],
+                    [observationPoints[i].Latitude, observationPoints[i].Longtitude],
 
                     {
                         // Содержимое балуна. //
                         balloonContentBody:
-                            " Пункт наблюдения: " + observationPoints[i].name + "<br \/>" +
-                            " Координаты: ш: " + observationPoints[i].latitude + "; д: " + observationPoints[i].longitude + "<br \/>" +
+                            " Пункт наблюдения: " + observationPoints[i].Name + "<br \/>" +
+                            " Координаты: ш: " + observationPoints[i].Latitude + "; д: " + observationPoints[i].Longtitude + "<br \/>" +
 
                             "<a target='_blank' href='/getObservationPointById?id=" + parseInt(observationPoints[i].id) + "'>Ифнормация о пункте</a>" + "<br \/>" +
                             authAdditionalParams,
-                        iconContent: observationPoints[i].measuredValue
+                        iconContent: observationPoints[i].MeasuredValue
                     }, {
                         preset: "islands#redStretchyIcon",
                         iconContentLayout: MyIconContentLayout

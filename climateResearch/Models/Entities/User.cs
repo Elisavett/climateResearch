@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace climateResearch.Models
+namespace climateResearch.Models.Entities
 {
     public class User : IdentityUser
     {

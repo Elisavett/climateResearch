@@ -1,4 +1,4 @@
-namespace climateResearch.Models
+namespace climateResearch.Models.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -7,17 +7,11 @@ namespace climateResearch.Models
     using System.Data.Entity.Spatial;
 
     [Table("measuring_instrument")]
-    public partial class MeasuringInstrument
+    public partial class MeasuringInstrument : EntityBase
     {
-        public long Id { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        [Column("name")]
-        public string Name { get; set; }
-
         [StringLength(300)]
         [Column("description")]
+        [Display(Name = "Описание")]
         public string Description { get; set; }
 
         [Column("observation_point_id")]

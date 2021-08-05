@@ -1,4 +1,4 @@
-namespace climateResearch.Models
+namespace climateResearch.Models.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -7,26 +7,21 @@ namespace climateResearch.Models
     using System.Data.Entity.Spatial;
 
     [Table("observation_point")]
-    public partial class ObservationPoint
+    public partial class ObservationPoint : EntityBase
     {
-        public long Id { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        [Column("name")]
-        public string Name { get; set; }
-
         [StringLength(300)]
         [Column("description")]
+        [Display(Name = "Описание")]
         public string Description { get; set; }
 
         [Column("latitude", TypeName = "numeric")]
+        [Display(Name = "Широта")]
         public decimal Latitude { get; set; }
 
         [Column("longtitude", TypeName = "numeric")]
+        [Display(Name = "Долгота")]
         public decimal Longtitude { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MeasuringInstrument> MeasuringInstruments { get; set; } = new HashSet<MeasuringInstrument>();
     }
 }

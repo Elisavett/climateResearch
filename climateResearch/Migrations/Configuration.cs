@@ -1,6 +1,7 @@
 ﻿namespace climateResearch.Migrations
 {
     using climateResearch.Models;
+    using climateResearch.Models.Entities;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;

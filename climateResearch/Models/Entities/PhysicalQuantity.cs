@@ -1,4 +1,4 @@
-namespace climateResearch.Models
+namespace climateResearch.Models.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -7,26 +7,20 @@ namespace climateResearch.Models
     using System.Data.Entity.Spatial;
 
     [Table("physical_quantity")]
-    public partial class PhysicalQuantity
+    public partial class PhysicalQuantity : EntityBase
     {
-        public long Id { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        [Column("name")]
-        public string Name { get; set; }
-
         [Required]
         [StringLength(10)]
         [Column("designation")]
+        [Display(Name = "Обозначение")]
         public string Designation { get; set; }
 
         [Required]
         [StringLength(10)]
         [Column("unit")]
+        [Display(Name = "Единица измерения")]
         public string Unit { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sensor> Sensors { get; set; } = new HashSet<Sensor>();
     }
 }
