@@ -1,0 +1,33 @@
+﻿@model IEnumerable<climateResearch.Models.Entities.MeasuringInstrument>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr onclick="window.location='/MeasuringInstruments/Details/@item.Id'">
+
+                <td>
+                    @Html.DisplayFor(model => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Редактировать", "Edit", "MeasuringInstruments", new { id = item.Id }, null) |
+                    @Html.ActionLink("Удалить", "Delete", "MeasuringInstruments", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

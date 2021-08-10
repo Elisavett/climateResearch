@@ -17,6 +17,7 @@ namespace climateResearch.Models.Entities
         [Column("observation_point_id")]
         public long? ObservationPointId { get; set; }
 
+        [Display(Name = "Пункт наблюдения")]
         public virtual ObservationPoint ObservationPoint { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

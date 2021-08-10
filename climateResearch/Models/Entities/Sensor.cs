@@ -11,25 +11,25 @@ namespace climateResearch.Models.Entities
     {
 
         [StringLength(50), Column("measurement_mode")]
-        [Display(Name = "Режим измерения ")]
+        [Display(Name = "Режим измерения")]
         public string MeasurementMode { get; set; }
 
         [Required]
         [StringLength(30)]
         [Column("designation")]
-        [Display(Name = "Обозначение в базе данных")]
+        [Display(Name = "Обозначение в БД")]
         public string Designation { get; set; }
 
         [Required]
         [StringLength(30)]
         [Column("db_name")]
-        [Display(Name = "Название базы данных")]
+        [Display(Name = "Название БД")]
         public string DbName { get; set; }
 
         [Required]
         [StringLength(30)]
         [Column("db_table")]
-        [Display(Name = "Название таблицы базы данных")]
+        [Display(Name = "Таблица в БД")]
         public string DbTable { get; set; }
 
         [Column("measuring_instrument_id")]
@@ -37,7 +37,9 @@ namespace climateResearch.Models.Entities
 
         [Column("physical_quantity_id")]
         public long? PhysicalQuantityId { get; set; }
+        [Display(Name = "Измерительный прибор")]
         public virtual MeasuringInstrument MeasuringInstrument { get; set; }
+        [Display(Name = "Физическая величина")]
         public virtual PhysicalQuantity PhysicalQuantity { get; set; }
     }
 }

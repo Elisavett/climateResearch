@@ -1,8 +1,6 @@
 ﻿using climateResearch.Models.Entities;
-using System;
+using climateResearch.Repos;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace climateResearch.Models.ViewModels
@@ -25,4 +23,15 @@ namespace climateResearch.Models.ViewModels
         public string Name { get; set; }
         public string MeasuredValue { get; set; }
     }
+    public class ViewModels
+    {
+        public static SelectList GetSelectList<T>() where T : EntityBase, new()
+        {
+            using (BaseRepo<T> someRepo = new BaseRepo<T>())
+            {
+                return new SelectList(someRepo.GetAll(), "Id", "Name");
+            }
+        }
+    }
+    
 }

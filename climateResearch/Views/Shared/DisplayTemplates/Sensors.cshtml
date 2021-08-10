@@ -1,0 +1,62 @@
+﻿@model IEnumerable<climateResearch.Models.Entities.Sensor>
+
+@{
+    ViewBag.Title = "Index";
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MeasuringInstrument)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhysicalQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeasurementMode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DbName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DbTable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr onclick="window.location='/Sensors/Details/@item.Id'">
+        <td>
+            @Html.DisplayFor(modelItem => item.MeasuringInstrument.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhysicalQuantity.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeasurementMode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DbName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DbTable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit",  "Sensors", new { id = item.Id }, null) |
+            @Html.ActionLink("Удалить", "Delete",  "Sensors", new { id = item.Id }, null)
+        </td>
+    </tr>
+}
+
+</table>

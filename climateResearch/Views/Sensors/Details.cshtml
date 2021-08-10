@@ -1,0 +1,74 @@
+﻿@model climateResearch.Models.Entities.Sensor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sensor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MeasuringInstrument.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeasuringInstrument.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhysicalQuantity.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhysicalQuantity.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MeasurementMode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MeasurementMode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DbName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DbName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DbTable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DbTable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

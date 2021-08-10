@@ -82,7 +82,6 @@ D:\repos\climateResearch\climateResearch\bin\ru\System.Web.WebPages.Razor.resour
 D:\repos\climateResearch\climateResearch\obj\Debug\climateResearch.csproj.CopyComplete
 D:\repos\climateResearch\climateResearch\obj\Debug\climateResearch.dll
 D:\repos\climateResearch\climateResearch\obj\Debug\climateResearch.pdb
-D:\repos\climateResearch\climateResearch\obj\Debug\climateResearch.csprojAssemblyReference.cache
 D:\repos\climateResearch\climateResearch\obj\Debug\climateResearch.Migrations.initial.resources
 D:\repos\climateResearch\climateResearch\obj\Debug\climateResearch.csproj.GenerateResource.cache
 D:\repos\climateResearch\climateResearch\bin\Microsoft.Bcl.AsyncInterfaces.dll

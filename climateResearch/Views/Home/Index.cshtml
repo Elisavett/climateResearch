@@ -2,25 +2,32 @@
 @{
     ViewBag.Title = "Home Page";
 }
+<style>
+    .body-content{
+        padding: 0px;
+        margin: 0px;
+    }
+</style>
+    <div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/map")
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=00edbb4c-85c6-4375-8249-f0baae6a12c2" type="text/javascript"></script>
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/map")
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=00edbb4c-85c6-4375-8249-f0baae6a12c2" type="text/javascript"></script>
-
-@Html.Hidden("json", Model.Json)
+        @Html.Hidden("json", Model.Json)
 
 
-<div style="width: 100%; height: 97%; position: absolute;">
+        <div style="width: 100%; height: 97%; position: absolute;">
 
-    <div style="width: 100%; height: 95%; position: absolute;padding: 0;" id="map"></div>
-    <div class="dropdown">
-        <button class="dropbtn">Тип датчика</button>
-        <div class="dropdown-content">
-            @foreach (var pq in Model.PhysicalQuantities)
-            {
-                @Html.ActionLink(pq.Name,"Index", "Home", new { physicalQuantityId = pq.Id }, null)
-            }
+            <div style="width: 100%; height: 95%; position: absolute;padding: 0;" id="map"></div>
+            <div class="dropdown">
+                <button class="dropbtn">Тип датчика</button>
+                <div class="dropdown-content">
+                    @foreach (var pq in Model.PhysicalQuantities)
+                    {
+                        @Html.ActionLink(pq.Name, "Index", "Home", new { physicalQuantityId = pq.Id }, null)
+                    }
+                </div>
+            </div>
         </div>
     </div>
-</div>
 

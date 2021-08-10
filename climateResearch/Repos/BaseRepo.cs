@@ -13,12 +13,12 @@ namespace climateResearch.Repos
 
     {
         private readonly DbSet<T> table;
-        protected ClimateDbContext db { get; }
+        protected ClimateDbContext Db { get; }
 
         public BaseRepo()
         {
-            db = new ClimateDbContext();
-            table = db.Set<T>();
+            Db = new ClimateDbContext();
+            table = Db.Set<T>();
         }
 
         public int Add(T entity)
@@ -31,15 +31,20 @@ namespace climateResearch.Repos
             table.AddRange(entities);
             return SaveChanges();
         }
+        public int Delete(long id)
+        {
+            T entity = GetOne(id);
+            return Delete(entity);
+        }
         public int Delete(T entity)
         {
-            db.Entry(entity).State = EntityState.Deleted;
+            Db.Entry(entity).State = EntityState.Deleted;
             return SaveChanges();
         }
 
         public void Dispose()
         {
-            db?.Dispose();
+            Db?.Dispose();
         }
 
         public List<T> ExecuteQuery(string sql) => table.SqlQuery(sql).ToList();
@@ -49,18 +54,26 @@ namespace climateResearch.Repos
 
         public T GetOne(long? id) => table.Find(id);
         public virtual List<T> GetAll() => table.ToList();
-        public virtual List<T> GetAllAndInclude(string entityToInclude) => table.Include(entityToInclude).ToList();
+        public virtual List<T> GetAllAndInclude(string[] entityToInclude)
+        {
+            foreach(string entity in entityToInclude)
+            {
+                table.Include(entity);
+            }
+            return table.ToList();
+            
+        }
 
         public int Save(T entity)
         {
-            db.Entry(entity).State = EntityState.Modified;
+            Db.Entry(entity).State = EntityState.Modified;
             return SaveChanges();
         }
         internal int SaveChanges()
         {
             try
             {
-                return db.SaveChanges();
+                return Db.SaveChanges();
             }
             catch (DbUpdateException ex)
             {

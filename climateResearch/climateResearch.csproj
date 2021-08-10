@@ -216,7 +216,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MeasuringInstrumentsController.cs" />
+    <Compile Include="Controllers\ObservationPointsController.cs" />
+    <Compile Include="Controllers\PhysicalQuantitiesController.cs" />
+    <Compile Include="Controllers\SensorsController.cs" />
     <Compile Include="ExternalDatabase\DBManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -295,9 +300,31 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ObservationPoints.cshtml" />
     <Content Include="Views\Home\PhysicalQuantities.cshtml" />
+    <Content Include="Views\ObservationPoints\Create.cshtml" />
+    <Content Include="Views\ObservationPoints\Delete.cshtml" />
+    <Content Include="Views\ObservationPoints\Details.cshtml" />
+    <Content Include="Views\ObservationPoints\Edit.cshtml" />
+    <Content Include="Views\ObservationPoints\Index.cshtml" />
+    <Content Include="Views\MeasuringInstruments\Delete.cshtml" />
+    <Content Include="Views\MeasuringInstruments\Details.cshtml" />
+    <Content Include="Views\MeasuringInstruments\Edit.cshtml" />
+    <Content Include="Views\Sensors\Delete.cshtml" />
+    <Content Include="Views\Sensors\Details.cshtml" />
+    <Content Include="Views\Sensors\Edit.cshtml" />
+    <Content Include="Views\PhysicalQuantities\Create.cshtml" />
+    <Content Include="Views\PhysicalQuantities\Delete.cshtml" />
+    <Content Include="Views\PhysicalQuantities\Details.cshtml" />
+    <Content Include="Views\PhysicalQuantities\Edit.cshtml" />
+    <Content Include="Views\PhysicalQuantities\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MeasuringInstrument.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MeasuringInstruments.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Sensors.cshtml" />
+    <Content Include="Views\ObservationPoints\AddMeasuringInstrument.cshtml" />
+    <Content Include="Views\MeasuringInstruments\AddSensor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,22 @@
+﻿@model climateResearch.Models.Entities.MeasuringInstrument
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <tr onclick="window.location='/MeasuringInstruments/Details/@Model.Id'">
+
+        <td>
+            @Html.DisplayFor(model => model.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.ObservationPoint.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", "MeasuringInstruments", new { id = Model.Id }, null) |
+            @Html.ActionLink("Удалить", "Delete",  "MeasuringInstruments", new { id = Model.Id }, null)
+        </td>
+    </tr>
