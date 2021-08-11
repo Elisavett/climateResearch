@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Добавить датчик</h2>
+<h2>Добавить датчик к</h2>
 
 @using (Html.BeginForm()) 
 {
@@ -48,14 +48,6 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.MeasuringInstrumentId, "MeasuringInstrumentId", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("MeasuringInstrumentId", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.MeasuringInstrumentId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
         @Html.LabelFor(model => model.PhysicalQuantityId, "PhysicalQuantityId", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("PhysicalQuantityId", null, htmlAttributes: new { @class = "form-control" })
@@ -78,7 +70,3 @@
     </div>
 </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

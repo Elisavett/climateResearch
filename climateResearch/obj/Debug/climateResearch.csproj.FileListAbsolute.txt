@@ -122,3 +122,4 @@ D:\repos\climateResearch\climateResearch\bin\K4os.Compression.LZ4.Streams.xml
 D:\repos\climateResearch\climateResearch\bin\K4os.Hash.xxHash.xml
 D:\repos\climateResearch\climateResearch\bin\MySql.Data.xml
 D:\repos\climateResearch\climateResearch\bin\MySqlConnector.xml
+D:\repos\climateResearch\climateResearch\obj\Debug\climateResearch.csprojAssemblyReference.cache

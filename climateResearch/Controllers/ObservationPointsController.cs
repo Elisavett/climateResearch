@@ -18,11 +18,6 @@ namespace climateResearch.Controllers
     {
         private readonly BaseRepo<ObservationPoint> repo = new BaseRepo<ObservationPoint>();
 
-        public ActionResult Index()
-        {
-            return View(repo.GetAll());
-        }
-
         public ActionResult Details(long? id)
         {
             if (id == null)

@@ -304,7 +304,6 @@
     <Content Include="Views\ObservationPoints\Delete.cshtml" />
     <Content Include="Views\ObservationPoints\Details.cshtml" />
     <Content Include="Views\ObservationPoints\Edit.cshtml" />
-    <Content Include="Views\ObservationPoints\Index.cshtml" />
     <Content Include="Views\MeasuringInstruments\Delete.cshtml" />
     <Content Include="Views\MeasuringInstruments\Details.cshtml" />
     <Content Include="Views\MeasuringInstruments\Edit.cshtml" />
@@ -315,7 +314,6 @@
     <Content Include="Views\PhysicalQuantities\Delete.cshtml" />
     <Content Include="Views\PhysicalQuantities\Details.cshtml" />
     <Content Include="Views\PhysicalQuantities\Edit.cshtml" />
-    <Content Include="Views\PhysicalQuantities\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MeasuringInstrument.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MeasuringInstruments.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Sensors.cshtml" />
